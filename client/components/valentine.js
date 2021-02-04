@@ -15,23 +15,37 @@ class Valentine extends Component {
 	async componentDidMount() {
 		await this.props.loadValentines();
 		this.props.loadGenres();
-		//do the props functions to get all valentines options
-		console.log("Yes, the component did mount");
 		this.chooseRandom();
 	}
 
 	chooseRandom() {
-		const randomElement = this.props.valentines[0];
-		console.log("random", randomElement);
+		const randomElement = this.props.valentines[
+			Math.floor(Math.random() * this.props.valentines.length)
+		];
 		this.setState({ displayValentine: randomElement });
 	}
 
 	render() {
+		let valentine = this.state.displayValentine.content || [];
+
+		if (valentine.length > 0) {
+			valentine = valentine.split(",");
+		}
+
 		return (
 			<>
 				<div id='valentine'>
-					<img src='/heart.png' />
-					<p> {this.state.displayValentine.content} </p>
+					<img src='/heart.png' />{" "}
+					<div className='valentinePoem'>
+						{valentine.map((val, index) => {
+							return (
+								<p key={index}>
+									{val}
+									<br />{" "}
+								</p>
+							);
+						})}{" "}
+					</div>
 				</div>
 				<button onClick={() => this.chooseRandom()}>
 					{" "}
@@ -59,5 +73,4 @@ const mapDispatch = (dispatch) => {
 };
 
 //connect what you're exporting
-
 export default connect(mapState, mapDispatch)(Valentine);
