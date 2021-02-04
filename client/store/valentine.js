@@ -32,5 +32,7 @@ export default function genresReducer(state = initialState, action) {
 	switch (action.type) {
 		case SET_VALENTINES:
 			return { valentines: action.valentine };
+		default:
+			return state;
 	}
 }

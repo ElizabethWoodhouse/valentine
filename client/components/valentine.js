@@ -22,10 +22,20 @@ class Valentine extends Component {
 
 	render() {
 		return (
-			<div id='valentine'>
-				<img src='/heart.png' />
-				<p> Some random text about valentine's </p>
-			</div>
+			<>
+				<div id='valentine'>
+					<img src='/heart.png' />
+					<p>
+						{" "}
+						{this.state.displayValentine.content ||
+							"Some random text about valentine's"}{" "}
+					</p>
+				</div>
+				<button onClick={() => this.chooseRandom()}>
+					{" "}
+					Give me a different one!
+				</button>
+			</>
 		);
 	}
 }
