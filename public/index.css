@@ -1,8 +1,68 @@
 body {
   margin: 0;
   padding: 0;
+  height: 95vh;
 }
+
+/* html, body{min-height:100%;} */
 
 body * {
   box-sizing: border-box;
 }
+
+#app {
+  font-family: 'Yusei Magic', sans-serif;
+  height: 100%;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+  height: 6rem;
+}
+
+a {
+  text-decoration: none;
+  color: #da157e;
+}
+
+#valentine {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 75%;
+}
+
+#valentine img {
+  background-color: pink;
+  height: 100%;
+}
+
+#valentine p {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.poem {
+  display: flex;
+  height: 75%;
+  align-items: center;
+  justify-content: center;
+  font-size: x-large;
+}
+
+.red {
+  color: red;
+}
+
+.blue {
+  color: blue;
+}
+
+
+/* //media queries for smaller screens to change the img size*/
+

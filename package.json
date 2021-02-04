@@ -1,5 +1,5 @@
 {
-  "name": "stratfs-challenge",
+  "name": "valentines-with-react",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -14,15 +14,21 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "core-js": "^3.8.3",
     "@babel/runtime-corejs3": "^7.12.5",
-    "regenerator-runtime": "^0.13.7",
     "axios": "^0.21.1",
+    "core-js": "^3.8.3",
     "express": "^4.16.2",
+    "history": "^5.0.0",
     "morgan": "^1.10.0",
     "pg": "^8.5.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-router-dom": "^5.2.0",
+    "redux": "^4.0.5",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0",
+    "regenerator-runtime": "^0.13.7",
     "sequelize": "^6.4.0"
   },
   "devDependencies": {

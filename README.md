@@ -1,2 +1,4 @@
-# Boilerplate
-This is a barebones PERN boilermaker with update-to-date dependencies and a basic full-stack configuration.
+# Valentine's Day Card Generator!
+
+An app that uses React, Redux, Express, and Sequelize in order to show student's
+how React-Router/Redux work!

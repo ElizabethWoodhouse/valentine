@@ -1,9 +1,16 @@
-import React from "react";
+import React from 'react'
+
+import {Navbar} from './components'
+
+import Routes from './routes'
 
 const App = () => {
   return (
-    <div>Hello world!</div>
-  );
-};
+    <>
+      <Navbar />
+      <Routes />
+    </>
+  )
+}
 
-export default App;
+export default App
