@@ -20,5 +20,3 @@ const Valentine = db.define("valentine", {
 		defaultValue: false,
 	},
 });
-
-module.exports = Valentine;

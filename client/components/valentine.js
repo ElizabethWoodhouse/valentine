@@ -17,14 +17,17 @@ class Valentine extends Component {
 
 	chooseRandom() {
 		const valentine = "Valentine's day card";
-		this.setState({ displayValentine: valentine });
+		this.setState({ displayValentine: { content: valentine } });
 	}
 
 	render() {
 		return (
 			<div id='valentine'>
 				<img src='/heart.png' />
-				<p> Some random text about valentine's </p>
+				<p>
+					{this.state.displayValentine.cntent ||
+						"Some random text about valentine's"}{" "}
+				</p>
 			</div>
 		);
 	}

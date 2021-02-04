@@ -2,7 +2,7 @@ const router = require("express").Router();
 
 module.exports = router;
 
-router.use("/valentine", require("./valentine"));
+router.use("/valantine", require("./valentine"));
 router.use("/genre", require("./genre"));
 
 router.use((req, res, next) => {

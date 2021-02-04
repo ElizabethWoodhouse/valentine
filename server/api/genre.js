@@ -6,7 +6,7 @@ router.get("/", async (req, res, next) => {
 		const genres = await Genre.findAll({
 			include: [Valentine],
 		});
-		res.json(genres);
+		res.json(genre);
 	} catch (err) {
 		next(err);
 	}
