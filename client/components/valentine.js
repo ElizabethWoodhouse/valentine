@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { fetchValentines } from "../store/valentine";
+import { fetchGenres } from "../store/genre";
 
 class Valentine extends Component {
 	constructor(props) {
@@ -9,15 +12,18 @@ class Valentine extends Component {
 		this.chooseRandom = this.chooseRandom.bind(this);
 	}
 
-	componentDidMount() {
+	async componentDidMount() {
+		await this.props.loadValentines();
+		this.props.loadGenres();
 		//do the props functions to get all valentines options
 		console.log("Yes, the component did mount");
 		this.chooseRandom();
 	}
 
 	chooseRandom() {
-		const valentine = "Valentine's day card";
-		this.setState({ displayValentine: valentine });
+		const randomElement = this.props.valentines[0];
+		console.log("random", randomElement);
+		this.setState({ displayValentine: randomElement });
 	}
 
 	render() {
@@ -25,11 +31,7 @@ class Valentine extends Component {
 			<>
 				<div id='valentine'>
 					<img src='/heart.png' />
-					<p>
-						{" "}
-						{this.state.displayValentine.content ||
-							"Some random text about valentine's"}{" "}
-					</p>
+					<p> {this.state.displayValentine.content} </p>
 				</div>
 				<button onClick={() => this.chooseRandom()}>
 					{" "}
@@ -41,9 +43,21 @@ class Valentine extends Component {
 }
 
 //map state
-
+const mapState = (props) => {
+	return {
+		valentines: props.valentinesReducer.valentines,
+		genre: props.genreReducer.genres,
+	};
+};
 //map dispatch
+
+const mapDispatch = (dispatch) => {
+	return {
+		loadValentines: () => dispatch(fetchValentines()),
+		loadGenres: () => dispatch(fetchGenres()),
+	};
+};
 
 //connect what you're exporting
 
-export default Valentine;
+export default connect(mapState, mapDispatch)(Valentine);

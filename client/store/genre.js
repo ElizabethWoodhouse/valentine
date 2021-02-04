@@ -11,6 +11,8 @@ export const setGenres = (genres) => {
 	};
 };
 
+//writing to state
+
 //thunk
 export const fetchGenres = () => {
 	return async (dispatch) => {

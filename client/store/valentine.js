@@ -1,11 +1,13 @@
+import axios from "axios";
+
 //actions
 const GET_VALENTINE = "GET_VALENTINE";
 
 //action creators
-export const getValentines = (valentine) => {
+export const getValentines = (valentines) => {
 	return {
-		type: SET_VALENTINES,
-		valentines: valentine,
+		type: GET_VALENTINE,
+		valentines: valentines,
 	};
 };
 
@@ -28,10 +30,10 @@ const initialState = {
 };
 
 //reducer
-export default function genresReducer(state = initialState, action) {
+export default function valentinesReducer(state = initialState, action) {
 	switch (action.type) {
-		case SET_VALENTINES:
-			return { valentines: action.valentine };
+		case GET_VALENTINE:
+			return { valentines: action.valentines };
 		default:
 			return state;
 	}
